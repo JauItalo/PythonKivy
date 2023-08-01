@@ -1,0 +1,121 @@
+<CreateAccountWindow>:
+    name: "create"
+    namee: namee
+    email: email
+    password: passw
+
+    FloatLayout:
+        Label:
+            text: "Create an Account"
+            size_hint: 0.8, 0.2
+            pos_hint: {"x": 0.1, "top": 0.95}
+            font_size: (root.width**2 + root.height**2) / 14**4
+
+        Label:
+            text: "Name: "
+            size_hint: 0.5, 0.1
+            pos_hint: {"x": 0.1, "top": 0.8}
+            font_size: (root.width**2 + root.height**2) / 14**4
+
+        TextInput:
+            id: namee
+            size_hint: 0.4, 0.1
+            pos_hint: {"x": 0.5, "top": 0.8}
+            multiline: False
+            font_size: (root.width**2 + root.height**2) / 14**4
+
+        Label:
+            text: "Email: "
+            size_hint: 0.5, 0.1
+            pos_hint: {"x": 0.1, "top": 0.7}
+            font_size: (root.width**2 + root.height**2) / 14**4
+
+        TextInput:
+            id: email
+            size_hint: 0.4, 0.1
+            pos_hint: {"x": 0.5, "top": 0.7}
+            multiline: False
+            font_size: (root.width**2 + root.height**2) / 14**4
+
+        Label:
+            text: "Password: "
+            size_hint: 0.5, 0.1
+            pos_hint: {"x": 0.1, "top": 0.6}
+            font_size: (root.width**2 + root.height**2) / 14**4
+
+        TextInput:
+            id: passw
+            size_hint: 0.4, 0.1
+            pos_hint: {"x": 0.5, "top": 0.6}
+            multiline: False
+            password: True
+            font_size: (root.width**2 + root.height**2) / 14**4
+
+        Button:
+            pos_hint: {"x": 0.3, "y": 0.3}
+            size_hint: 0.4, 0.1
+            font_size: (root.width**2 + root.height**2) / 17**4
+            text: "Already have an Account? Log In"
+            on_release:
+                root.manager.transition.direction = "left"
+                root.login()
+
+        Button:
+            pos_hint: {"x": 0.2, "y": 0.1}
+            size_hint: 0.6, 0.1
+            text: "Submit"
+            font_size: (root.width**2 + root.height**2) / 14**4
+            on_release:
+                root.manager.transition.direction = "left"
+                root.submit()
+
+<LoginWindow>:
+    name: "login"
+    email: email
+    password: password
+
+    FloatLayout:
+        Label:
+            text: "Email: "
+            size_hint: 0.35, 0.1
+            pos_hint: {"x": 0.1, "top": 0.9}
+            font_size: (root.width**2 + root.height**2) / 13**4
+
+        TextInput:
+            id: email
+            size_hint: 0.4, 0.1
+            pos_hint: {"x": 0.45, "top": 0.9}
+            font_size: (root.width**2 + root.height**2) / 13**4
+            multiline: False
+
+        Label:
+            text: "Password: "
+            size_hint: 0.35, 0.1
+            pos_hint: {"x": 0.1, "top": 0.8}
+            font_size: (root.width**2 + root.height**2) / 13**4
+
+        TextInput:
+            id: password
+            size_hint: 0.4, 0.1
+            pos_hint: {"x": 0.45, "top": 0.8}
+            font_size: (root.width**2 + root.height**2) / 13**4
+            multiline: False
+            password: True
+
+        Button:
+            pos_hint: {"x": 0.2, "y": 0.1}
+            size_hint: 0.6, 0.1
+            font_size: (root.width**2 + root.height**2) / 13**4
+            text: "Login"
+            on_release:
+                root.manager.transition.direction = "up"
+                root.loginBtn()
+
+        Button:
+            pos_hint: {"x": 0.2, "y": 0.0}
+            size_hint: 0.6, 0.1
+            font_size: (root.width**2 + root.height**2) / 13**4
+            text: "Não tem uma conta? Bora criar!"
+            on_release:
+                root.manager.transition.direction = "right"
+                root.createBtn()
